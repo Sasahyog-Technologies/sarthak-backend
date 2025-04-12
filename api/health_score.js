@@ -62,11 +62,11 @@ router.post("/healthscore", async (req, res) => {
   const {
     businessName,
     businessType,
-    hasWebsite,
-    activeOnSocial,
-    collectingCustomerInfo,
-    usingCRM,
-    marketingMethod,
+    website,
+    social,
+    contact,
+    tool,
+    market,
   } = req.body;
 
   // Optional validation
@@ -85,11 +85,11 @@ You are an expert digital business consultant.
 Here is the business information:
 •⁠  ⁠Business Name: ${businessName}
 •⁠  ⁠Business Type: ${businessType}
-•⁠  ⁠Has Website: ${hasWebsite}
-•⁠  ⁠Active on Social Media: ${activeOnSocial}
-•⁠  ⁠Collecting Customer Info: ${collectingCustomerInfo}
-•⁠  ⁠Using CRM/Digital Tools: ${usingCRM}
-•⁠  ⁠Current Marketing Method: ${marketingMethod}
+•⁠  ⁠Has Website: ${website}
+•⁠  ⁠Active on Social Media: ${social}
+•⁠  ⁠Collecting Customer Info: ${contact}
+•⁠  ⁠Using CRM/Digital Tools: ${tool}
+•⁠  ⁠Current Marketing Method: ${market}
 
 Give a detailed but crisp Digital Health Checkup covering:
 •⁠  ⁠Digital Health Score (out of 10)

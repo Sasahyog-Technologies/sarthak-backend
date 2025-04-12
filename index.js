@@ -5,7 +5,7 @@ const app = express()
 const brainstormRoute = require('./api/brainstorm')
 const roadmapRoute = require('./api/growth_roadmap')
 const healthscoreRoute = require('./api/health_score')
-const researchRoute = require('./api/market_research')
+const researchRoute = require('./api/research')
 
 configDotenv();
 app.use(cors());
