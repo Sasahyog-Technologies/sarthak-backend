@@ -17,25 +17,25 @@ router.post("/brainstorm", async (req, res) => {
 
   try {
     const prompt = `
-You are an expert startup advisor.
+        You are an expert startup advisor.
 
-Here is the user's idea:
-•⁠  ⁠Stage: ${journey}
-•⁠  ⁠Idea: ${businessIdea}
-•⁠  ⁠Business Type: ${businessType}
-•⁠  ⁠Customer Type: ${customers}
-•⁠  ⁠Launch Location: ${location.country}, ${location.region}, ${location.city}
-•⁠  ⁠Challenges: ${challenges.join(", ")}
+        Here is the user's idea:
+        •⁠  ⁠Stage: ${journey}
+        •⁠  ⁠Idea: ${businessIdea}
+        •⁠  ⁠Business Type: ${businessType}
+        •⁠  ⁠Customer Type: ${customers}
+        •⁠  ⁠Launch Location: ${location.country}, ${location.region}, ${location.city}
+        •⁠  ⁠Challenges: ${challenges.join(", ")}
 
-Give a detailed but crisp Founder Brainstorm Report covering:
-•⁠  ⁠Idea Rating (Score out of 10 + Reason)
-•⁠  ⁠2 Pros
-•⁠  ⁠2 Cons
-•⁠  ⁠Location Suitability Analysis
-•⁠  ⁠2 Solutions for Challenges
-•⁠  ⁠2 Tech/Growth Tips
-•⁠  ⁠Encourage to book a consultation.
-`;
+        Give a detailed but crisp Founder Brainstorm Report covering:
+        •⁠  ⁠Idea Rating (Score out of 10 + Reason)
+        •⁠  ⁠2 Pros
+        •⁠  ⁠2 Cons
+        •⁠  ⁠Location Suitability Analysis
+        •⁠  ⁠2 Solutions for Challenges
+        •⁠  ⁠2 Tech/Growth Tips
+        •⁠  ⁠Encourage to book a consultation.
+        `;
 
     const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
