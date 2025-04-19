@@ -1,7 +1,9 @@
 const fetch = require('node-fetch');
+const express = require('express');
 
+const router = express();
 
-const whatsApp = async (req, res) => {
+router.post("/sendTemplate", async (req, res) => {
   const { name, phone, pdf } = req.body;
 
   try {
@@ -13,13 +15,11 @@ const whatsApp = async (req, res) => {
       body: JSON.stringify({
         "Key": "ce194551d1a64ceaa768541b39190314",
         "to": `91${phone}`,
-        "languageCode": "en_GB",
-        "TemplateName": "sarthak_website",
+        "languageCode": "en",
+        "TemplateName": "founder_ai_studio",
         "headertype":"documents",
         "headertext":"text",
         "BodyParameter": [
-          { "type": "text", "text": name },
-          { "type": "text", "text": phone },
           { "type": "text", "text": pdf }
         ],
         // If your template includes a clickable button, you can uncomment this:
@@ -49,4 +49,6 @@ const whatsApp = async (req, res) => {
       error: error.message,
     });
   }
-};
+});
+
+module.exports = router;
